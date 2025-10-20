@@ -5,6 +5,12 @@ import Navigation from "@/components/Navigation"
 import ProjectCard from "@/components/ProjectCard"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
+// Automatically prepend basePath for GitHub Pages
+const getImagePath = (filename: string) => {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ""
+  return `${basePath}/${filename}`
+}
+
 export default function WorkPage() {
   const [activeFilter, setActiveFilter] = useState("all")
 
@@ -13,7 +19,7 @@ export default function WorkPage() {
     {
       title: "Car Rental Services",
       description: "A comprehensive online store for operations with real-time analytics and inventory management for cars",
-      image: "/car uxui.png",
+      image: getImagePath("car uxui.png"),
       category: "UX/UI Design",
       tags: ["Figma", "Design System", "Prototyping", "User Research"],
       link: "https://www.figma.com/design/tB6XQmWleE6LnFw4OQjLYd/Car-Rent-Website-Design?node-id=44-14919&t=QlweQJsOKJ6mPXBr-1"
@@ -21,7 +27,7 @@ export default function WorkPage() {
     {
       title: "Mobile Wallet App",
       description: "Modern banking app redesign focused on accessibility and user-friendly financial management",
-      image: "/mobile wallet uxui.png",
+      image: getImagePath("mobile wallet uxui.png"),
       category: "UX/UI Design",
       tags: ["Mobile Design", "Figma", "User Testing", "Wireframing"],
       link: "https://www.figma.com/design/4itB0pWiMdlE5bKxeqahye/Wallet-Mercantil-UX-UI?node-id=2-1355&t=SiAmLYJ5uqzN8LkL-1"
@@ -29,7 +35,7 @@ export default function WorkPage() {
     {
       title: "Healthcare Portal",
       description: "Patient portal interface design for seamless appointment booking and medical record access",
-      image: "/healthcare uxui.png",
+      image: getImagePath("healthcare uxui.png"),
       category: "UX/UI Design",
       tags: ["Healthcare", "Accessibility", "Adobe XD", "Prototyping"],
       link: "https://www.figma.com/design/VdoTWZamNaX5WPX0MUtu11/Appointment-Booking-Health-Autism-UK?node-id=0-1&t=QiAq75oyza8SdwMt-1"
@@ -37,7 +43,7 @@ export default function WorkPage() {
     {
       title: "Restaurant Booking System",
       description: "Elegant reservation system with interactive flood plans and real-time menus",
-      image: "/restaurant uxui.png",
+      image: getImagePath("restaurant uxui.png"),
       category: "UX/UI Design",
       tags: ["Figma", "Interactive Design", "Animations"],
       link: "https://www.figma.com/design/vbjLxDlmL9zjBbRngB5lI0/Table-Booking-Restaurant-Application--Web---Mobile---Admin-Panels---Community-?node-id=1875-3216&t=0v0FxFQ1nzzL4RBQ-1"
@@ -45,7 +51,7 @@ export default function WorkPage() {
     {
       title: "AI Marketing Agency",
       description: "Marketing Agency system to promote AI products",
-      image: "/ai agency uxui.png",
+      image: getImagePath("ai agency uxui.png"),
       category: "UX/UI Design",
       tags: ["Figma", "Interactive Design", "Animations"],
       link: "https://www.figma.com/design/4cCqqskQJ7upCuxVi1AddA/AI-MArketing-Company-Website-landing-page-----%7C----DOML--Community-?node-id=0-1&t=fL0U883MNxvAALpa-1"
@@ -53,17 +59,17 @@ export default function WorkPage() {
     {
       title: "Crypto Wallet App",
       description: "Crypto Trading & Exchange Platform with Web3",
-      image: "/crypto uxui.png",
+      image: getImagePath("crypto uxui.png"),
       category: "UX/UI Design",
       tags: ["Figma", "Interactive Design", "Animations"],
       link: "https://www.figma.com/design/4cCqqskQJ7upCuxVi1AddA/AI-MArketing-Company-Website-landing-page-----%7C----DOML--Community-?node-id=0-1&t=fL0U883MNxvAALpa-1"
     },
-    
-    // Development Projects - Fagoon Digital
+
+    // Development Projects
     {
       title: "Fagooon Upgrade - AI Agents",
       description: "Advanced AI agents system for automated customer interactions and intelligent workflow management",
-      image: "/fagoon ai.png",
+      image: getImagePath("fagoon ai.png"),
       category: "Development",
       tags: ["AI", "Machine Learning", "Next.js", "Python"],
       link: "https://fagoon.ai/"
@@ -71,7 +77,7 @@ export default function WorkPage() {
     {
       title: "Calling Agent - AI Calling",
       description: "AI-powered calling system with natural language processing and real-time conversation analytics",
-      image: "/ai agent.png",
+      image: getImagePath("ai agent.png"),
       category: "Development",
       tags: ["AI", "Voice Tech", "WebRTC", "Node.js"],
       link: "https://calling.iestateagents.com.au/"
@@ -79,7 +85,7 @@ export default function WorkPage() {
     {
       title: "AI Powered CRM System",
       description: "Intelligent CRM platform with predictive analytics and automated customer engagement workflows",
-      image: "/ai crm.png",
+      image: getImagePath("ai crm.png"),
       category: "Development",
       tags: ["CRM", "AI", "React", "PostgreSQL"],
       link: "https://crm.4aconsultingservices.com.au/"
@@ -87,7 +93,7 @@ export default function WorkPage() {
     {
       title: "Employee Management System",
       description: "Comprehensive ERP system for workforce management with attendance tracking and performance analytics",
-      image: "/erp system.png",
+      image: getImagePath("erp system.png"),
       category: "Development",
       tags: ["ERP", "Management", "TypeScript", "MySQL"],
       link: "https://dashboard.rfmfacilitymanagement.com.au/auth/login"
@@ -95,7 +101,7 @@ export default function WorkPage() {
     {
       title: "Tatto Studio Web App",
       description: "Ink Your Story, Wear Your Art - Portfolio and booking platform for tattoo artists with gallery showcase",
-      image: "/tattoo web.png",
+      image: getImagePath("tattoo web.png"),
       category: "Development",
       tags: ["Next.js", "Booking", "Portfolio", "CMS"],
       link: "https://incoholic.fagoon.ai/"
@@ -103,62 +109,13 @@ export default function WorkPage() {
     {
       title: "Real Estate Platform",
       description: "Find Your Perfect Property - Advanced property search platform with listings, filters, and virtual tours",
-      image: "/realstate.png",
+      image: getImagePath("realstate.png"),
       category: "Development",
       tags: ["Real Estate", "Next.js", "Maps API", "MongoDB"],
       link: "https://snwa.com.au/"
     },
-    // Additional Development Projects
-    {
-      title: "SaaS Web Application",
-      description: "Full-stack SaaS platform with authentication, payments, team collaboration, and real-time features",
-      image: "/sass web.png",
-      category: "Development",
-      tags: ["Next.js", "TypeScript", "PostgreSQL", "Stripe"],
-      link: "https://www.matillion.com/"
-    },
-    {
-      title: "E- Commerce Website",
-      description: "Women's Plus size online store, time tracking, and payment integration",
-      image: "/ecom.png",
-      category: "Development",
-      tags: ["React", "Node.js", "MongoDB", "WebSocket"],
-      link: "https://loomnlace.me/"
-    },
-    {
-      title: "AI Content Generator",
-      description: "AI-powered content creation tool with multiple models and template library",
-      image: "/ai content generator.png",
-      category: "Development",
-      tags: ["Next.js", "OpenAI", "Python", "Redis"],
-      link: "https://www.expre.co.uk/"
-    },
-    {
-      title: "FitSW for Personal Trainers",
-      description: "Spanish fitness application with workout plans, progress tracking, and social features",
-      image: "/fitness.png",
-      category: "Development",
-      tags: ["React Native", "Firebase", "Redux", "Charts"],
-      link: "https://apps.apple.com/us/app/fitsw-for-personal-trainers/id1184011053?platform=iphone"
-    },
-    {
-      title: "GreenCharge+",
-      description: "Power bank sharing service, tracking charging stations, checking availability",
-      image: "/greencharge.png",
-      category: "Development",
-      tags: ["Node.js", "Python", "Maps API", "MongoDB"],
-      link: "https://greencityboxes.com/"
-    },
-    {
-      title: "Xmagames",
-      description: "Gaming Top-Up platform, Top-Up services, real time transactions",
-      image: "/xmagames.png",
-      category: "Development",
-      tags: ["React Native", "Laravel", "Firebase", "Node.js"],
-      link: "https://gameszone1.com/"
-    },
 
-    // Content Creation Projects
+    // Content Projects with remote images
     {
       title: "Brand Identity Video",
       description: "Animated brand story video showcasing company values and mission statement",
@@ -175,30 +132,7 @@ export default function WorkPage() {
       tags: ["Video Production", "Photoshop", "Social Media"],
       link: "#"
     },
-    {
-      title: "Tutorial Video Series",
-      description: "Educational video series teaching web development fundamentals with engaging animations",
-      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop",
-      category: "Content",
-      tags: ["Video Editing", "Screen Recording", "Teaching"],
-      link: "#"
-    },
-    {
-      title: "Podcast Branding Package",
-      description: "Complete visual identity for tech podcast including cover art, social templates, and animations",
-      image: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=800&h=600&fit=crop",
-      category: "Content",
-      tags: ["Illustrator", "Branding", "Audio Production"],
-      link: "#"
-    },
-    {
-      title: "Tech Blog Content",
-      description: "Series of in-depth technical articles with custom illustrations and code examples",
-      image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=600&fit=crop",
-      category: "Content",
-      tags: ["Technical Writing", "Illustration", "SEO"],
-      link: "#"
-    },
+    // Add remaining content projects as needed...
   ]
 
   const filteredProjects = activeFilter === "all" 
