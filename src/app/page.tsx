@@ -152,7 +152,7 @@ export default function Home() {
                 <Linkedin className="h-6 w-6 group-hover:text-primary transition-colors" />
               </Link>
               <Link 
-                href="mailto:designbysanish@gmail.com" 
+                href="designbysanish@gmail.com" 
                 className="glass-card p-4 rounded-2xl hover:glow-primary transition-all duration-300 hover:scale-110 hover:-translate-y-2 group"
               >
                 <Mail className="h-6 w-6 group-hover:text-primary transition-colors" />
