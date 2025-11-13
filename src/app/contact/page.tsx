@@ -45,7 +45,7 @@ export default function ContactPage() {
       icon: Mail,
       label: "Email",
       value: "Email Here",
-      href: "designbysanish@gmail.com",
+      href: "mailto:designbysanish@gmail.com",
       color: "text-red-500"
     },
     {
